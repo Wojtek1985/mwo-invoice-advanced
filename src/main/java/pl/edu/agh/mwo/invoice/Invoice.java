@@ -15,7 +15,7 @@ public class Invoice {
 	}
 	
 	public void addProduct(Product product) {
-		products.put(product,0);
+		products.put(product,1);
 	}
 
 	public void addProduct(Product product, Integer quantity) {
@@ -41,7 +41,7 @@ public class Invoice {
 
 	public BigDecimal getTotal() {
 		BigDecimal subt=getSubtotal();
-		subt=subt.add(this.getTax());
-		return subt;
+		BigDecimal total=subt.add(getTax());
+		return total;
 	}
 }
